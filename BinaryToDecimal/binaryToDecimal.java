@@ -31,5 +31,6 @@ public class binaryToDecimal {
 				System.out.println(e.getMessage());
 			}
 		}while(true);
+		s.close();
 	}
 }
