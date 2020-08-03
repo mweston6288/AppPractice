@@ -3,4 +3,26 @@
 	<head>
 		<title>Binary converter</title>
 	</head>
+	<body>
+		<input id="input">
+		<textarea id="output">0</textarea>
+		<script>
+			input.addEventListener("input", function(e){
+				var input = document.getElementById("input").value;
+				var output = 0;
+				input.split("").map(char=>{
+					if(char != "1" && char != "0"){
+						output = "Invalid";
+					}
+					else{
+						output *= 2;
+						if(char == "1")
+							output += 1;
+					}
+					document.getElementById("output").value = output;
+
+				})
+			})
+		</script>
+	</body>
 </html>
