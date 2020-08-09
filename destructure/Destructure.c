@@ -9,11 +9,14 @@ int main(int argc, char **args){
 		return 0;
 	}
 	char c;
-	do{
-		c = fgetc(f);
-		if (!isspace(c)){
+	c = fgetc(f);
+
+	while (c != EOF){
+		if (!isspace(c))
+		{
 			fputc(c, f1);
 		}
-	}while(c !=EOF);
+		c = fgetc(f);
+	}
 	fclose(f);
 }
