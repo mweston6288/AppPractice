@@ -12,9 +12,26 @@ int main(int argc, char **args){
 	c = fgetc(f);
 
 	while (c != EOF){
+		if (c == '#'){
+			while (c != '\n'){
+				fputc(c, f1);
+				c = fgetc(f);
+			}
+			fputc(c, f1);
+			continue;
+		}
 		if (!isspace(c))
 		{
 			fputc(c, f1);
+		}
+		else{
+			switch(c){
+				case '\n':
+				case '\t':
+					break;
+				default:
+					fputc(c, f1);
+			}
 		}
 		c = fgetc(f);
 	}
